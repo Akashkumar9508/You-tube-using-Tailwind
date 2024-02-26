@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <style>
+        ::-webkit-scrollbar {
+            width: 7px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: none;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: gray;
+            /* background: rgb(9, 2, 33); */
+            border-radius: 40px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: gray;
+        }
+    </style>
+</head>
+
+<body class="bg-slate-950">
+    <nav class="w-full h-[60px] bg-slate-950 flex justify-between items-center px-6 fixed z-10">
+        <div class="menu-logo h-[100%] w-[15%] flex justify-start items-center ">
+            <div
+                class="live h-[40px] w-[40px]   rounded-[50%] flex justify-center items-center hover:bg-gray-700 cursor-pointer">
+                <i class='bx bx-menu text-white text-2xl'></i>
+            </div>
+            <div class="h-[100%] w-[130px] flex justify-center items-center cursor-pointer">
+                <img src="/asset/yt_logo_rgb_dark.png" class="h-[37%]" alt>
+            </div>
+        </div>
+        <div class="searchbar h-[100%] w-[65%]  flex items-center justify-center">
+            <input type="search" placeholder="Search.."
+                class="h-[75%] w-[55%] rounded-l-full border-[1.5px] border-gray-600 bg-transparent outline-none text-white px-6">
+            <div
+                class="search-icon h-[75%] w-[6%] bg-gray-700 rounded-r-full border-[1.5px] border-gray-600 flex justify-center items-center hover:bg-gray-800 cursor-pointer">
+                <i class='bx bx-search text-2xl' style='color:#ffffff'></i>
+            </div>
+            <div
+                class="mic h-[40px] w-[40px] ml-5 bg-gray-700 rounded-[50%] border-[1.5px] border-gray-600 flex justify-center items-center hover:bg-gray-800 cursor-pointer">
+                <i class='bx bx-microphone text-2xl' style='color:#ffffff'></i>
+            </div>
+        </div>
+        <div class="userside  h-[100%] w-[15%] flex justify-end items-center ">
+            <div
+                class="live h-[40px] w-[40px] ml-5  rounded-[50%] flex justify-center items-center hover:bg-gray-700 cursor-pointer">
+                <i class='bx bx-video-plus text-white text-2xl'></i>
+            </div>
+            <div
+                class="live h-[40px] w-[40px] ml-5  rounded-[50%] flex justify-center items-center hover:bg-gray-700 cursor-pointer">
+                <i class='bx bx-bell text-white text-2xl'></i>
+            </div>
+            <div class="live h-[40px] w-[40px] ml-5  rounded-[50%] flex justify-center items-center cursor-pointer">
+                <img src="/asset/143926244.png" class="h-[40px] w-[40px] rounded-[50%]" alt>
+            </div>
+        </div>
+    </nav>
+    <div class="main-container w-[100%] flex justify-between ">
+        <div
+            class="app-drawer w-[16%] fixed h-lvh bg-slate-950 flex flex-col justify-start items-center mt-[60px]  hover:overflow-scroll ">
+            <div class="bars h-10 w-[85%] flex justify-start items-center hover:bg-slate-900 mt-2 rounded-full">
+                <i class='bx bxs-home text-white text-2xl ml-4'></i>
+                <h2 class="ml-5 text-white font-semibold">Home</h2>
+            </div>
+            <div class="bars h-10 w-[85%] flex justify-start items-center hover:bg-slate-900 mt-2 rounded-full">
+                <i class='bx bx-play-circle text-white text-2xl ml-4'></i>
+                <h2 class="ml-5 text-white font-semibold">Shorts</h2>
+            </div>
+            <div class="bars h-10 w-[85%] flex justify-start items-center hover:bg-slate-900 mt-2 rounded-full">
+                <i class='bx bxs-detail text-white text-2xl ml-4'></i>
+                <h2 class="ml-5 text-white font-semibold">Subscriptions</h2>
+            </div>
+            <hr class="h-[1px] w-[90%] bg-white mt-2 mb-2 ">
+            <div class="bars h-10 w-[85%] flex justify-start items-center hover:bg-slate-900 mt-2 rounded-full">
+                <h2 class="ml-5 text-white font-semibold">You</h2>
+                <i class='bx bx-chevron-right text-white text-2xl ml-1'></i>
+            </div>
+            <div class="bars h-10 w-[85%] flex justify-start items-center hover:bg-slate-900 mt-2 rounded-full">
+                <i class='bx bxs-user-rectangle text-white text-2xl ml-4'></i>
+                <h2 class="ml-5 text-white font-semibold">Your Channel</h2>
+            </div>
+            <div class="bars h-10 w-[85%] flex justify-start items-center hover:bg-slate-900 mt-2 rounded-full">
+                <i class='bx bx-history text-white text-2xl ml-4'></i>
+                <h2 class="ml-5 text-white font-semibold">History</h2>
+            </div>
+            <div class="bars h-10 w-[85%] flex justify-start items-center hover:bg-slate-900 mt-2 rounded-full">
+                <i class='bx bxs-videos text-white text-2xl ml-4'></i>
+                <h2 class="ml-5 text-white font-semibold">Your Videos</h2>
+            </div>
+            <div class="bars h-10 w-[85%] flex justify-start items-center hover:bg-slate-900 mt-2 rounded-full">
+                <i class='bx bx-time-five text-white text-2xl ml-4'></i>
+                <h2 class="ml-5 text-white font-semibold">Watch later</h2>
+            </div>
+            <div class="bars h-10 w-[85%] flex justify-start items-center hover:bg-slate-900 mt-2 rounded-full">
+                <i class='bx bx-chevron-down text-white text-2xl ml-4'></i>
+                <h2 class="ml-5 text-white font-semibold">Show More</h2>
+            </div>
+            <hr class="h-[0.5px] w-[90%] bg-white mt-2 mb-2 ">
+            <div class="bars h-10 w-[85%] flex justify-start items-center  mt-2 rounded-full">
+                <h2 class="ml-5 text-white font-bold">Subscriptions</h2>
+            </div>
+            <div class="bars h-10 w-[85%] flex justify-start items-center hover:bg-slate-900 mt-2 rounded-full">
+                <i class='bx bx-user text-white text-2xl ml-4'></i>
+                <h2 class="ml-5 text-white font-semibold">Khatali
+                    Gamers</h2>
+            </div>
+            <div class="bars h-10 w-[85%] flex justify-start items-center hover:bg-slate-900 mt-2 rounded-full">
+                <i class='bx bx-user text-white text-2xl ml-4'></i>
+                <h2 class="ml-5 text-white font-semibold">Code On</h2>
+            </div>
+            <div class="bars h-10 w-[85%] flex justify-start items-center hover:bg-slate-900 mt-2 rounded-full">
+                <i class='bx bx-user text-white text-2xl ml-4'></i>
+                <h2 class="ml-5 text-white font-semibold">Kumar vlogs</h2>
+            </div>
+            <div class="bars h-10 w-[85%] flex justify-start items-center hover:bg-slate-900 mt-2 rounded-full">
+                <i class='bx bx-user text-white text-2xl ml-4'></i>
+                <h2 class="ml-5 text-white font-semibold">Sheryians
+                    Coding</h2>
+            </div>
+            <hr class="h-[0.4px] w-[90%] bg-white mt-2 mb-2 ">
+            <div class="bars h-10 w-[85%] flex justify-start items-center  mt-2 rounded-full">
+                <h2 class="ml-5 text-white font-bold">Explore</h2>
+            </div>
+            <div class="bars h-10 w-[85%] flex justify-start items-center hover:bg-slate-900 mt-2 rounded-full">
+                <i class='bx bxs-hot text-white text-2xl ml-4'></i>
+                <h2 class="ml-5 text-white font-semibold">Trending</h2>
+            </div>
+            <div class="bars h-10 w-[85%] flex justify-start items-center hover:bg-slate-900 mt-2 rounded-full">
+                <i class='bx bx-shopping-bag text-white text-2xl ml-4'></i>
+                <h2 class="ml-5 text-white font-semibold">Shopping</h2>
+            </div>
+            <div class="bars h-10 w-[85%] flex justify-start items-center hover:bg-slate-900 mt-2 rounded-full">
+                <i class='bx bxs-music text-white text-2xl ml-4'></i>
+                <h2 class="ml-5 text-white font-semibold">Music</h2>
+            </div>
+            <div class="bars h-10 w-[85%] flex justify-start items-center hover:bg-slate-900 mt-2 rounded-full">
+                <i class='bx bx-movie-play text-white text-2xl ml-4'></i>
+                <h2 class="ml-5 text-white font-semibold">Movies</h2>
+            </div>
+            <div class="bars h-10 w-[85%] flex justify-start items-center hover:bg-slate-900 mt-2 rounded-full">
+                <i class='bx bx-podcast text-white text-2xl ml-4'></i>
+                <h2 class="ml-5 text-white font-semibold">Live</h2>
+            </div>
+            <div class="bars h-10 w-[85%] flex justify-start items-center hover:bg-slate-900 mt-2 rounded-full">
+                <i class='bx bx-game text-white text-2xl ml-4'></i>
+                <h2 class="ml-5 text-white font-semibold">Games</h2>
+            </div>
+            <div class="bars h-10 w-[85%] flex justify-start items-center hover:bg-slate-900 mt-2 rounded-full">
+                <i class='bx bx-news text-white text-2xl ml-4'></i>
+                <h2 class="ml-5 text-white font-semibold">News</h2>
+            </div>
+            <div class="bars h-10 w-[85%] flex justify-start items-center hover:bg-slate-900 mt-2 rounded-full">
+                <i class='bx bxs-trophy text-white text-2xl ml-4'></i>
+                <h2 class="ml-5 text-white font-semibold">Sports</h2>
+            </div>
+            <div class="bars h-10 w-[85%] flex justify-start items-center hover:bg-slate-900 mt-2 rounded-full">
+                <i class='bx bx-bulb text-white text-2xl ml-4'></i>
+                <h2 class="ml-5 text-white font-semibold">Learning</h2>
+            </div>
+            <div class="bars h-10 w-[85%] flex justify-start items-center hover:bg-slate-900 mt-2 rounded-full">
+                <i class='bx bxs-coffee-bean text-white text-2xl ml-4'></i>
+                <h2 class="ml-5 text-white font-semibold">Fashion &
+                    Style</h2>
+            </div>
+            <div class="bars h-10 w-[85%] flex justify-start items-center hover:bg-slate-900 mt-2 rounded-full">
+                <i class='bx bx-podcast text-white text-2xl ml-4'></i>
+                <h2 class="ml-5 text-white font-semibold">Live</h2>
+            </div>
+            <hr class="h-[1px] w-[90%] bg-white mt-2 mb-2 ">
+            <div class="bars h-10 w-[85%] flex justify-start items-center hover:bg-slate-900 mt-2 rounded-full">
+                <i class='bx bx-cog text-white text-2xl ml-4'></i>
+                <h2 class="ml-5 text-white font-semibold">Settings</h2>
+            </div>
+            <div class="bars h-10 w-[85%] flex justify-start items-center hover:bg-slate-900 mt-2 rounded-full">
+                <i class='bx bxs-flag-alt text-white text-2xl ml-4'></i>
+                <h2 class="ml-5 text-white font-semibold">Report
+                    history</h2>
+            </div>
+            <div class="bars h-10 w-[85%] flex justify-start items-center hover:bg-slate-900 mt-2 rounded-full">
+                <i class='bx bx-help-circle text-white text-2xl ml-4'></i>
+                <h2 class="ml-5 text-white font-semibold">Helps</h2>
+            </div>
+            <div class="bars h-10 w-[85%] flex justify-start items-center hover:bg-slate-900 mt-2 rounded-full">
+                <i class='bx bxs-message-alt-error text-white text-2xl ml-4'></i>
+                <h2 class="ml-5 text-white font-semibold">Send Feedback</h2>
+            </div>
+            <hr class="h-[1px] w-[90%] bg-white mt-2 mb-2 ">
+            <p><a href class="no-underline text-white">About</a>
+                <a href class="no-underline text-white">About</a>
+                <a href class="no-underline text-white">Press</a><br>
+                <a href class="no-underline text-white">Copyright</a>
+                <a href class="no-underline text-white">Contact us</a>
+                <a href class="no-underline text-white">Creators</a>
+                <a href class="no-underline text-white">Devloper</a><br>
+                <a href class="no-underline text-white"></a>
+            </p>
+            <p class="mt-6"><a href class="no-underline text-white">Terms</a>
+                <a href class="no-underline text-white">Conditions</a>
+                <a href class="no-underline text-white">Policy</a><br>
+                <a href class="no-underline text-white">How Youtube Work</a>
+                <a href class="no-underline text-white">features of
+                    Youtube</a>
+                <br class="mt-2">
+                <a href class="no-underline text-gray-300">© 2024 Google
+                    LLC</a>
+            </p>
+        </div>
+        <div class="content w-[84%] h-lvh mt-[60px] relative left-[16%] overflow-hidden">
+            <!-- <div class="second-nav bg-slate-300 w-[84%] h-[60px] fixed left-[16%]"></div> -->
+            <div class="videos-sections h-[350px] mt-[60px] px37 py-7 flex ">
+                <div class="one-videos w-[35%] h-[260px] ">
+                    <img src="/asset/t1.jpg " class="w-[90%] h-[220px] rounded-[10px]" alt>
+                    <div class="details flex mt-3">
+                        <img src="/asset/143926244.png" class="rounded-[50%] h-[40px] w-[40px]" alt>
+                        <div class="detial-text w-[80%] pl-2">
+                            <h3 class="w-[100%]  text-white font-semibold">How
+                                To Get Rich & Financially Independent
+                                (Works in
+                                2024)</h3>
+                            <h6 class="text-gray-400 text-[0.8rem]">
+                                CodeWithHarry
+                                138K views .
+                                1 day ago</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="one-videos w-[35%] h-[260px] ">
+                    <img src="/asset/t2.jpg " class="w-[90%] h-[220px] rounded-[10px]" alt>
+                    <div class="details flex mt-3">
+                        <img src="/asset/143926244.png" class="rounded-[50%] h-[40px] w-[40px]" alt>
+                        <div class="detial-text w-[80%] pl-2">
+                            <h3 class="w-[100%]  text-white font-semibold">How
+                                To Get Rich & Financially Independent
+                                (Works in
+                                2024)</h3>
+                            <h6 class="text-gray-400 text-[0.8rem]">
+                                CodeWithHarry
+                                138K views .
+                                1 day ago</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="one-videos w-[35%] h-[260px] ">
+                    <img src="/asset/t3.jpg " class="w-[90%] h-[220px] rounded-[10px]" alt>
+                    <div class="details flex mt-3">
+                        <img src="/asset/143926244.png" class="rounded-[50%] h-[40px] w-[40px]" alt>
+                        <div class="detial-text w-[80%] pl-2">
+                            <h3 class="w-[100%]  text-white font-semibold">How
+                                To Get Rich & Financially Independent
+                                (Works in
+                                2024)</h3>
+                            <h6 class="text-gray-400 text-[0.8rem]">
+                                CodeWithHarry
+                                138K views .
+                                1 day ago</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="videos-sections h-[350px] mt-[20px] px-3 py-1 flex ">
+                <div class="one-videos w-[35%] h-[260px] ">
+                    <img src="/asset/t4.jpg " class="w-[90%] h-[220px] rounded-[10px]" alt>
+                    <div class="details flex mt-3">
+                        <img src="/asset/143926244.png" class="rounded-[50%] h-[40px] w-[40px]" alt>
+                        <div class="detial-text w-[80%] pl-2">
+                            <h3 class="w-[100%]  text-white font-semibold">How
+                                To Get Rich & Financially Independent
+                                (Works in
+                                2024)</h3>
+                            <h6 class="text-gray-400 text-[0.8rem]">
+                                CodeWithHarry
+                                138K views .
+                                1 day ago</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="one-videos w-[35%] h-[260px] ">
+                    <img src="/asset/t5.jpg " class="w-[90%] h-[220px] rounded-[10px]" alt>
+                    <div class="details flex mt-3">
+                        <img src="/asset/143926244.png" class="rounded-[50%] h-[40px] w-[40px]" alt>
+                        <div class="detial-text w-[80%] pl-2">
+                            <h3 class="w-[100%]  text-white font-semibold">How
+                                To Get Rich & Financially Independent
+                                (Works in
+                                2024)</h3>
+                            <h6 class="text-gray-400 text-[0.8rem]">
+                                CodeWithHarry
+                                138K views .
+                                1 day ago</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="one-videos w-[35%] h-[260px] ">
+                    <img src="/asset/t6.jpg " class="w-[90%] h-[220px] rounded-[10px]" alt>
+                    <div class="details flex mt-3">
+                        <img src="/asset/143926244.png" class="rounded-[50%] h-[40px] w-[40px]" alt>
+                        <div class="detial-text w-[80%] pl-2">
+                            <h3 class="w-[100%]  text-white font-semibold">How
+                                To Get Rich & Financially Independent
+                                (Works in
+                                2024)</h3>
+                            <h6 class="text-gray-400 text-[0.8rem]">
+                                CodeWithHarry
+                                138K views .
+                                1 day ago</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="videos-sections h-[350px] mt-[60px] px-7 py-7 flex ">
+                <div class="one-videos w-[35%] h-[260px] ">
+                    <img src="/asset/t7.jpg " class="w-[90%] h-[220px] rounded-[10px]" alt>
+                    <div class="details flex mt-3">
+                        <img src="/asset/143926244.png" class="rounded-[50%] h-[40px] w-[40px]" alt>
+                        <div class="detial-text w-[80%] pl-2">
+                            <h3 class="w-[100%]  text-white font-semibold">How
+                                To Get Rich & Financially Independent
+                                (Works in
+                                2024)</h3>
+                            <h6 class="text-gray-400 text-[0.8rem]">
+                                CodeWithHarry
+                                138K views .
+                                1 day ago</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="one-videos w-[35%] h-[260px] ">
+                    <img src="/asset/t8.jpg " class="w-[90%] h-[220px] rounded-[10px]" alt>
+                    <div class="details flex mt-3">
+                        <img src="/asset/143926244.png" class="rounded-[50%] h-[40px] w-[40px]" alt>
+                        <div class="detial-text w-[80%] pl-2">
+                            <h3 class="w-[100%]  text-white font-semibold">How
+                                To Get Rich & Financially Independent
+                                (Works in
+                                2024)</h3>
+                            <h6 class="text-gray-400 text-[0.8rem]">
+                                CodeWithHarry
+                                138K views .
+                                1 day ago</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="one-videos w-[35%] h-[260px] ">
+                    <img src="/asset/t.jpg " class="w-[90%] h-[220px] rounded-[10px]" alt>
+                    <div class="details flex mt-3">
+                        <img src="/asset/143926244.png" class="rounded-[50%] h-[40px] w-[40px]" alt>
+                        <div class="detial-text w-[80%] pl-2">
+                            <h3 class="w-[100%]  text-white font-semibold">How
+                                To Get Rich & Financially Independent
+                                (Works in
+                                2024)</h3>
+                            <h6 class="text-gray-400 text-[0.8rem]">
+                                CodeWithHarry
+                                138K views .
+                                1 day ago</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+
+</html>
